@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Authentication/Firebase.config";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 // Create a context for user authentication
 export const UserContext = createContext(null);
@@ -53,11 +54,22 @@ const UserContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        setUser(currentUser);
-        console.log("User logged in:", currentUser);
+        console.log("Currently Logged In: ", currentUser);
         setLoading(false);
+
+        // // get token and store client
+        // const userInfo = { email: currentUser.email };
+        // useAxiosPublic.post("/jwt", userInfo).then((res) => {
+        //   if (res.data.token) {
+        //     localStorage.setItem("accessToken", res.data.token);
+        //     setLoading(false);
+        //   }
+        // });
       } else {
         console.log("User logged out!");
+
+        // localStorage.removeItem("accessToken");
+        setLoading(false);
       }
     });
 
