@@ -9,5 +9,3 @@ const Logo = () => {
 };
 
 export default Logo;
-
-// staging comment

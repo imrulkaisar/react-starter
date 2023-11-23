@@ -30,5 +30,3 @@ const useAuth = () => {
 };
 
 export default useAuth;
-
-// staging comment

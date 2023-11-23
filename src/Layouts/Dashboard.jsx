@@ -10,5 +10,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-// staging comment

@@ -7,5 +7,3 @@ const Index = () => {
 };
 
 export default Index;
-
-// staging comment

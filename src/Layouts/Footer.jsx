@@ -7,5 +7,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// staging comment
