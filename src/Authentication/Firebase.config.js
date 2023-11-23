@@ -19,3 +19,5 @@ const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
 export default auth;
+
+// staging comment
